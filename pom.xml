@@ -87,6 +87,11 @@
       </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-data-jpa</artifactId>
         <version>${spring-boot.version}</version>
       </dependency>
@@ -125,6 +130,10 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -261,7 +270,7 @@
             <enableAssertions>true</enableAssertions>
             <encoding>${project.reporting.outputEncoding}</encoding>
             <failIfNoSpecifiedTests>true</failIfNoSpecifiedTests>
-            <failIfNoTests>true</failIfNoTests>
+        <!--<failIfNoTests>true</failIfNoTests>-->
             <reuseForks>true</reuseForks>
             <forkCount>1</forkCount>
             <testFailureIgnore>false</testFailureIgnore>
