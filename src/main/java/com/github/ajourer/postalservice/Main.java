@@ -10,7 +10,17 @@ public class Main {
     private static final Logger log = getLogger(Main.class);
 
     public static void main(final String[] args) {
-        log.info(args.toString());
         SpringApplication.run(Main.class, args);
+    }
+
+    @Bean
+    public CommandLineRunner getCommandLineRunner(
+        final PostalItemRepository repository
+    ) {
+        return args -> {
+            final var postalItem = repository.findById(0);
+            log.info(postalItem);
+            repository.save(new PostalItem(ItemType.LETTER, 460001));
+        };
     }
 }
