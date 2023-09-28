@@ -38,4 +38,9 @@ public class PostalItem {
     )
     @Getter @Setter
     private Integer postcode;
+
+    public PostalItem(final ItemType type, final Integer postcode) {
+        this.type = type;
+        this.postcode = postcode;
+    }
 }
