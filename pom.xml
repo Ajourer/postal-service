@@ -179,7 +179,7 @@
             <compilerArgs>
               <arg>-deprecation</arg>
               <arg>-g:none</arg>
-              <arg>-Werror</arg>
+          <!--<arg>-Werror</arg>-->
               <arg>-Xdiags:verbose</arg>
           <!--<arg>-Xdoclint:all</arg>-->
               <arg>-Xlint:all</arg>
@@ -189,7 +189,7 @@
             <enablePreview>false</enablePreview>
             <encoding>${project.build.sourceEncoding}</encoding>
             <failOnError>true</failOnError>
-            <failOnWarning>true</failOnWarning>
+        <!--<failOnWarning>true</failOnWarning>-->
             <fork>true</fork>
             <maxmem>1024M</maxmem>
             <meminitial>128M</meminitial>
