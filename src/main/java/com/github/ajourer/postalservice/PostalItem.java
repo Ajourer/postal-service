@@ -1,4 +1,4 @@
-package com.github.ajourer.mailservice;
+package com.github.ajourer.postalservice;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
