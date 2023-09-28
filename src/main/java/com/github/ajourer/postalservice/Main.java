@@ -21,7 +21,7 @@ public class Main {
     ) {
         return args -> {
             final var postalItem = repository.findById(0);
-            log.info(postalItem);
+            log.info(postalItem.toString());
             repository.save(new PostalItem(ItemType.LETTER, 460001));
         };
     }
