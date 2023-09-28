@@ -10,7 +10,7 @@ public class Main {
     private static final Logger log = getLogger(Main.class);
 
     public static void main(final String[] args) {
-        log.info(args.length + "");
+        log.info(args.toString());
         SpringApplication.run(Main.class, args);
     }
 }
