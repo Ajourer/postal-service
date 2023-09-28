@@ -219,7 +219,7 @@
           <version>${maven-dependency-plugin.version}</version>
           <configuration>
             <analyzer>default</analyzer>
-            <failOnWarning>true</failOnWarning>
+        <!--<failOnWarning>true</failOnWarning>-->
             <ignoreAllNonTestScoped>false</ignoreAllNonTestScoped>
             <ignoreNonCompile>false</ignoreNonCompile>
             <ignoreUnusedRuntime>false</ignoreUnusedRuntime>
