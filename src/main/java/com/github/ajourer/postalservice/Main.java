@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class Main {
     private static final Logger log = getLogger(Main.class);
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
         SpringApplication.run(Main.class, args);
     }
