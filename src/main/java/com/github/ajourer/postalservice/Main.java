@@ -14,6 +14,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan
+@PropertySource("classpath:/application.properties")
 public class Main {
     private static final Logger log = getLogger(Main.class);
 
