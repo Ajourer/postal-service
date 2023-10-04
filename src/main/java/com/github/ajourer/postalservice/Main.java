@@ -7,15 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import static org.slf4j.LoggerFactory.getLogger;
 
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
 @SpringBootApplication
+@Configuration
+@EnableAutoConfiguration
+@ComponentScan
 public class Main {
     private static final Logger log = getLogger(Main.class);
 
-    public static void main(final String[] args) throws ClassNotFoundException {
-        Class.forName("org.postgresql.Driver");
+    public static void main(final String[] args) {
         SpringApplication.run(Main.class, args);
     }
 
