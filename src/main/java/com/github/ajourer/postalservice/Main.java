@@ -24,7 +24,7 @@ public class Main {
             final var statement = connection.createStatement()
         ) {
             final var result = statement.executeQuery(
-                "SELECT * FROM pg_catolog.pg_user"
+                "SELECT * FROM pg_catalog.pg_user"
             );
             System.out.println(result.next());
             System.out.println(result.getString(1));
