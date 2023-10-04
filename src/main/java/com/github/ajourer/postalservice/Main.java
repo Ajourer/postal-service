@@ -7,11 +7,26 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import static org.slf4j.LoggerFactory.getLogger;
 
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 @SpringBootApplication
 public class Main {
     private static final Logger log = getLogger(Main.class);
 
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws SQLException {
+        try(
+            final var connection = DriverManager.getConnection(
+                "jdbc:postgresql://localhost:5432/postal_service",
+                "postal_service",
+                "a2{O)9U%V+Lt~dnMykSPG1?sF8Wf:p0H"
+            );
+            final var statement = connection.createStatement()
+        ) {
+            final var result = statement.executeQuery("SHOW DATABASES");
+            System.out.println(result.next());
+            System.out.println(result.getString(1));
+        }
         SpringApplication.run(Main.class, args);
     }
 
