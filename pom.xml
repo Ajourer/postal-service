@@ -250,6 +250,7 @@
               <usedDependency>ch.qos.logback:logback-classic</usedDependency>
               <usedDependency>org.glassfish.jaxb:jaxb-runtime</usedDependency>
               <usedDependency>org.postgresql:postgresql</usedDependency>
+              <usedDependency>org.projectlombok:lombok</usedDependency>
             </usedDependencies>
           </configuration>
           <executions>

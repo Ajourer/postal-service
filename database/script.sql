@@ -2,7 +2,7 @@
 DROP DATABASE IF EXISTS postal_service;
 DROP USER IF EXISTS postal_service;
 
--- Just for example. You shouldn't save password to git.
+-- Just for example. You should not save password to git.
 CREATE USER postal_service WITH
     UNENCRYPTED PASSWORD 'a2{O)9U%V+Lt~dnMykSPG1?sF8Wf:p0H';
 CREATE DATABASE postal_service WITH
