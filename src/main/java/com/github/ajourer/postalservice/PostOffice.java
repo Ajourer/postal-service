@@ -12,7 +12,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity(name="PostOffice")
-@Table(catalog="postal_service", name="post_office")
+@Table(name="post_office", schema="public")
 @NoArgsConstructor
 @ToString
 public class PostOffice {
