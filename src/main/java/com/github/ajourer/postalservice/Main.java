@@ -19,12 +19,15 @@ public class Main {
 
     @Bean
     public CommandLineRunner getCommandLineRunner(
-        final PostalItemRepository repository
+        // final PostalItemRepository repository
     ) {
         return args -> {
+            log.info("Hello");
+            /*
             final var postalItem = repository.findById(0);
             log.info(postalItem.toString());
             repository.save(new PostalItem(ItemType.LETTER, 460001));
+            */
         };
     }
 }
