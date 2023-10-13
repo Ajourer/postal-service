@@ -22,11 +22,24 @@ import lombok.ToString;
 @ToString
 public class PostalItem {
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="id", nullable=false, table="postal_item")
+    @Column(
+        insertable=false,
+        name="id",
+        nullable=false,
+        table="postal_item",
+        updatable=false
+    )
     @Getter @Setter
     private Long id;
 
-    @Column(name="type", nullable=false, table="postal_item")
+    @Column(
+        insertable=true,
+        length=8,
+        name="type",
+        nullable=false,
+        table="postal_item",
+        updatable=false
+    )
     @Enumerated(EnumType.STRING)
     private ItemType type;
 
@@ -35,7 +48,8 @@ public class PostalItem {
         name="postcode",
         nullable=false,
         referencedColumnName="postcode",
-        table="postal_item"
+        table="postal_item",
+        targetEntity=PostOffice.class
     )
     @Getter @Setter
     private PostOffice postOffice;

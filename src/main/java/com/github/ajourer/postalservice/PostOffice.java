@@ -17,7 +17,13 @@ import lombok.ToString;
 @ToString
 public class PostOffice {
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    @Column(name="postcode", nullable=false, table="post_office")
+    @Column(
+        insertable=true,
+        name="postcode",
+        nullable=false,
+        table="post_office",
+        updatable=false
+    )
     @Getter @Setter
     private Integer postcode;
 
