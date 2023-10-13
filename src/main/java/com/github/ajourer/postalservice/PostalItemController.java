@@ -20,10 +20,13 @@ public class PostalItemController {
       this.repository = repository;
     }
 
+    // Aggregate root
+    // tag::get-aggregate-root[]
     @GetMapping("/postal-items")
     public List<PostalItem> all() {
         return repository.findAll();
     }
+    // end::get-aggregate-root[]
 
     @PostMapping("/postal-items")
     public PostalItem newPostalItem(
