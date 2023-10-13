@@ -35,7 +35,7 @@ public class PostalItem {
         name="postcode",
         nullable=false,
         referencedColumnName="postcode",
-        table="postal_item"
+        table="post_office"
     )
     @Getter @Setter
     private PostOffice postOffice;
