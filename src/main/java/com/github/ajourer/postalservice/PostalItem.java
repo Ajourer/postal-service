@@ -31,14 +31,12 @@ public class PostalItem {
     private ItemType type;
 
     @ManyToOne(optional=false, fetch=FetchType.LAZY)
-/*
     @JoinColumn(
         name="postcode",
         nullable=false,
         referencedColumnName="postcode",
-        table="post_office"
+        table="postal_item"
     )
-*/
     @Getter @Setter
     private PostOffice postOffice;
 /*
