@@ -23,12 +23,14 @@ public class PostalItemController {
     }
 
     @PostMapping("/postal-items")
-    public PostalItem newPostalItem(@RequestBody PostalItem newPostalItem) {
+    public PostalItem newPostalItem(
+        @RequestBody final PostalItem newPostalItem
+    ) {
         return repository.save(newPostalItem);
     }
 
     @GetMapping("/postal-items/{id}")
-    public PostalItem one(@PathVariable Long id) {
+    public PostalItem one(@PathVariable final long id) {
         return repository.findById(id).orElseThrow(() ->
             new PostalItemNotFoundException(id)
         );
@@ -50,7 +52,7 @@ public class PostalItemController {
     } */
 
     @DeleteMapping("/postal-items/{id}")
-    public void deletePostalItem(@PathVariable Long id) {
+    public void deletePostalItem(@PathVariable final long id) {
         repository.deleteById(id);
     }
 }
