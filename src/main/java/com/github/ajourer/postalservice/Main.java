@@ -19,7 +19,7 @@ public class Main {
 
     @Bean
     public CommandLineRunner getCommandLineRunner(
-        final PostOfficeRepository postOfficeRepository,
+        final PostOfficeRepository postOfficeRepository
     ) {
         return args -> {
             final var postOffice = new PostOffice();
