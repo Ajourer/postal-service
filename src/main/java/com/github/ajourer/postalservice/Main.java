@@ -19,12 +19,15 @@ public class Main {
 
     @Bean
     public CommandLineRunner getCommandLineRunner(
-        final PostalItemRepository repository
+        final PostOfficeRepository postOfficeRepository,
     ) {
         return args -> {
-            final var postalItem = new PostalItem(ItemType.LETTER, 460001);
-            repository.save(postalItem);
-            log.info(postalItem);
+            final var postOffice = new PostOffice();
+            postOffice.setAddress("г Москва, ул Мясницкая, дом 26А стр. 1");
+            postOffice.setName("Почтовое отделение № 101000");
+            postOffice.setPostcode(101000);
+            repository.save(postOffice);
+            log.info(postOffice);
         };
     }
 }
