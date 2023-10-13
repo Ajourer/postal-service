@@ -43,13 +43,16 @@ public class PostalItem {
     @Enumerated(EnumType.STRING)
     private ItemType type;
 
-    @ManyToOne(optional=false, fetch=FetchType.LAZY)
+    @ManyToOne(
+        optional=false,
+        fetch=FetchType.LAZY,
+        targetEntity=PostOffice.class
+    )
     @JoinColumn(
         name="postcode",
         nullable=false,
         referencedColumnName="postcode",
-        table="postal_item",
-        targetEntity=PostOffice.class
+        table="postal_item"
     )
     @Getter @Setter
     private PostOffice postOffice;
