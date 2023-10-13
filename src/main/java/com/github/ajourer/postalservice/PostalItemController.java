@@ -1,6 +1,6 @@
 package com.github.ajourer.postalservice;
 
-import java.util.List;
+import java.util.Iterable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class PostalItemController {
     // Aggregate root
     // tag::get-aggregate-root[]
     @GetMapping("/postal-items")
-    public List<PostalItem> all() {
+    public Iterable<PostalItem> all() {
         return repository.findAll();
     }
     // end::get-aggregate-root[]
