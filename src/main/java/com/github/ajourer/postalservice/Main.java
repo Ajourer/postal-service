@@ -16,18 +16,4 @@ public class Main {
     public static void main(final String[] args) {
         SpringApplication.run(Main.class, args);
     }
-
-    @Bean
-    public CommandLineRunner getCommandLineRunner(
-        final PostOfficeRepository repository
-    ) {
-        return args -> {
-            final var postOffice = new PostOffice();
-            postOffice.setAddress("г Москва, ул Мясницкая, дом 26А стр. 1");
-            postOffice.setName("Почтовое отделение № 101000");
-            postOffice.setPostcode(101000);
-            repository.save(postOffice);
-            log.info(postOffice.toString());
-        };
-    }
 }

@@ -1,4 +1,4 @@
-/*
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-*/
 public class PostalItemController {
-/*
     private final PostalItemRepository repository;
 
-    public PostalItemController(PostalItemRepository repository) {
+    public PostalItemController(
+        @Autowired final PostalItemRepository repository
+    ) {
       this.repository = repository;
     }
 
@@ -34,7 +34,7 @@ public class PostalItemController {
         );
     }
 
-    @PutMapping("/postal-items/{id}")
+    /* @PutMapping("/postal-items/{id}")
     public PostalItem replacePostalItem(
         @RequestBody PostalItem newPostalItem,
         @PathVariable Long id
@@ -47,11 +47,10 @@ public class PostalItemController {
             newPostalItem.setId(id);
             return repository.save(newPostalItem);
         });
-    }
+    } */
 
     @DeleteMapping("/postal-items/{id}")
     public void deletePostalItem(@PathVariable Long id) {
         repository.deleteById(id);
     }
-*/
 }

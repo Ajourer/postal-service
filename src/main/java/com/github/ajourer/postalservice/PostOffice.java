@@ -27,11 +27,11 @@ public class PostOffice {
     @Getter @Setter
     private Integer postcode;
 
-    @Column(name="name", nullable=false, table="post_office")
+    @Column(name="name", nullable=false, table="post_office", unique=true)
     @Getter @Setter
     private String name;
 
-    @Column(name="address", nullable=false, table="post_office")
+    @Column(name="address", nullable=false, table="post_office", unique=true)
     @Getter @Setter
     private String address;
 }
