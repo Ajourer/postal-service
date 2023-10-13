@@ -27,7 +27,7 @@ public class Main {
             postOffice.setName("Почтовое отделение № 101000");
             postOffice.setPostcode(101000);
             repository.save(postOffice);
-            log.info(postOffice);
+            log.info(postOffice.toString());
         };
     }
 }
