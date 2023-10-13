@@ -37,7 +37,7 @@ public class PostalItemController {
     @GetMapping("/postal-items/{id}")
     public PostalItem one(@PathVariable final long id) {
         return repository.findById(id).orElseThrow(() ->
-            new NoSuchElementException(id)
+            new NoSuchElementException("" + id)
         );
     }
 
