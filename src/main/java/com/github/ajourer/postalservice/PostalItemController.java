@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping("/postal-items")
 @RestController
 public class PostalItemController {
     private final PostalItemRepository repository;
@@ -16,32 +18,32 @@ public class PostalItemController {
     public PostalItemController(
         @Autowired final PostalItemRepository repository
     ) {
-      this.repository = repository;
+        this.repository = repository;
     }
 
     // Aggregate root
     // tag::get-aggregate-root[]
-    @GetMapping("/postal-items")
+    @GetMapping("/")
     public Iterable<PostalItem> all() {
         return repository.findAll();
     }
     // end::get-aggregate-root[]
 
-    @PostMapping("/postal-items")
+    @PostMapping("/")
     public PostalItem newPostalItem(
         @RequestBody final PostalItem newPostalItem
     ) {
         return repository.save(newPostalItem);
     }
 
-    @GetMapping("/postal-items/{id}")
+    @GetMapping("/{id}")
     public PostalItem one(@PathVariable final long id) {
         return repository.findById(id).orElseThrow(() ->
             new java.util.NoSuchElementException("" + id)
         );
     }
 
-    /* @PutMapping("/postal-items/{id}")
+    /* @PutMapping("/{id}")
     public PostalItem replacePostalItem(
         @RequestBody PostalItem newPostalItem,
         @PathVariable Long id
@@ -56,7 +58,7 @@ public class PostalItemController {
         });
     } */
 
-    @DeleteMapping("/postal-items/{id}")
+    @DeleteMapping("/{id}")
     public void deletePostalItem(@PathVariable final long id) {
         repository.deleteById(id);
     }
