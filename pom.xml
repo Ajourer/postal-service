@@ -25,7 +25,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-    <jaxb.version>2.3.8</jaxb.version>
+    <jakarta.persistence.version>2.2.3</jakarta.persistence.version>
     <junit.version>4.13.2</junit.version>
     <logback.version>1.4.8</logback.version>
     <lombok.version>1.18.30</lombok.version>
@@ -49,16 +49,15 @@
         <version>${logback.version}</version>
       </dependency>
       <dependency>
+        <groupId>jakarta.persistence</groupId>
+        <artifactId>jakarta.persistence-api</artifactId>
+        <version>${jakarta.persistence.version}</version>
+      </dependency>
+      <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>${junit.version}</version>
         <scope>test</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.glassfish.jaxb</groupId>
-        <artifactId>jaxb-runtime</artifactId>
-        <version>${jaxb.version}</version>
-        <scope>runtime</scope>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
@@ -142,8 +141,8 @@
       <artifactId>junit</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.glassfish.jaxb</groupId>
-      <artifactId>jaxb-runtime</artifactId>
+      <groupId>jakarta.persistence</groupId>
+      <artifactId>jakarta.persistence-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
