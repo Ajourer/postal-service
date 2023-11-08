@@ -26,6 +26,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
     <jakarta.persistence.version>2.2.3</jakarta.persistence.version>
+    <jakarta.xml.bind>2.3.3</jakarta.xml.bind>
     <junit.version>4.13.2</junit.version>
     <logback.version>1.4.8</logback.version>
     <lombok.version>1.18.30</lombok.version>
@@ -52,6 +53,11 @@
         <groupId>jakarta.persistence</groupId>
         <artifactId>jakarta.persistence-api</artifactId>
         <version>${jakarta.persistence.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.xml.bind</groupId>
+        <artifactId>jakarta.xml.bind-api</artifactId>
+        <version>${jakarta.xml.bind.version}</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId>
