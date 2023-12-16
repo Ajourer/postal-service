@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/postal-items")
 @RestController
-@SpringBootApplication
 public class PostalItemController {
     private final PostalItemRepository repository;
 
@@ -23,13 +22,10 @@ public class PostalItemController {
         this.repository = repository;
     }
 
-    // Aggregate root
-    // tag::get-aggregate-root[]
     @GetMapping("/")
     public Iterable<PostalItem> all() {
         return repository.findAll();
     }
-    // end::get-aggregate-root[]
 
     @PostMapping("/")
     public PostalItem newPostalItem(
@@ -39,7 +35,7 @@ public class PostalItemController {
     }
 
     @GetMapping("/{id}")
-    public PostalItem one(@PathVariable final long id) {
+    public PostalItem one(@PathVariable("id") final long id) {
         return repository.findById(id).orElseThrow(() ->
             new java.util.NoSuchElementException("" + id)
         );
@@ -61,7 +57,7 @@ public class PostalItemController {
     } */
 
     @DeleteMapping("/{id}")
-    public void deletePostalItem(@PathVariable final long id) {
+    public void deletePostalItem(@PathVariable("id") final long id) {
         repository.deleteById(id);
     }
 }

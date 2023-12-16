@@ -28,7 +28,7 @@
     <jakarta.persistence.version>2.2.3</jakarta.persistence.version>
     <jakarta.xml.bind.version>2.3.3</jakarta.xml.bind.version>
     <junit.version>4.13.2</junit.version>
-    <logback.version>1.4.8</logback.version>
+    <logback.version>1.2.13</logback.version>
     <lombok.version>1.18.30</lombok.version>
     <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
     <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -37,9 +37,9 @@
     <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
     <mockito.version>5.4.0</mockito.version>
     <postgresql.version>42.6.0</postgresql.version>
-    <slf4j.version>2.0.7</slf4j.version>
-    <spring.version>5.3.30</spring.version>
-    <spring-boot.version>2.7.16</spring-boot.version>
+    <slf4j.version>1.7.36</slf4j.version>
+    <spring.version>5.3.31</spring.version>
+    <spring-boot.version>2.7.18</spring-boot.version>
   </properties>
 
   <dependencyManagement>
@@ -221,6 +221,11 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>${maven-assembly-plugin.version}</version>
@@ -362,6 +367,10 @@
     </pluginManagement>
 
     <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>

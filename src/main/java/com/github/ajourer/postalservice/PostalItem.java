@@ -41,6 +41,7 @@ public class PostalItem {
         updatable=false
     )
     @Enumerated(EnumType.STRING)
+    @Getter @Setter
     private ItemType type;
 
     @ManyToOne(
