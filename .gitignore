@@ -15,4 +15,5 @@
 *.txz
 *.war
 *.zip
+.idea
 target/
