@@ -27,7 +27,7 @@ public class PostOfficeController {
     }
 
     @GetMapping("/{id}")
-    public PostOffice one(@PathVariable("id") final long id) {
+    public PostOffice one(@PathVariable("id") final int id) {
         return repository.findById(id).orElseThrow(() ->
             new java.util.NoSuchElementException("" + id)
         );
@@ -36,7 +36,7 @@ public class PostOfficeController {
     @PutMapping("/{id}")
     public PostOffice replacePostOffice(
         @RequestBody PostOffice newPostOffice,
-        @PathVariable("id") Long id
+        @PathVariable("id") Integer id
     ) {
         return repository.findById(id).map(PostOffice -> {
             PostOffice.setType(newPostOffice.getType());
@@ -49,7 +49,7 @@ public class PostOfficeController {
     }
 
     @DeleteMapping("/{id}")
-    public void deletePostOffice(@PathVariable("id") final long id) {
+    public void deletePostOffice(@PathVariable("id") final int id) {
         repository.deleteById(id);
     }
 }
