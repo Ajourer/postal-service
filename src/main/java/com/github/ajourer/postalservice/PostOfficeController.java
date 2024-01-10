@@ -33,17 +33,17 @@ public class PostOfficeController {
         );
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{postcode}")
     public PostOffice replacePostOffice(
         @RequestBody PostOffice newPostOffice,
-        @PathVariable("id") Integer id
+        @PathVariable("postcode") Integer postcode
     ) {
-        return repository.findById(id).map(PostOffice -> {
-            PostOffice.setType(newPostOffice.getType());
-            PostOffice.setPostOffice(newPostOffice.getPostOffice());
+        return repository.findById(postcode).map(PostOffice -> {
+            PostOffice.setName(newPostOffice.getName());
+            PostOffice.setAddress(newPostOffice.getAddress());
             return repository.save(PostOffice);
         }).orElseGet(() -> {
-            newPostOffice.setId(id);
+            newPostOffice.setPostcode(postcode);
             return repository.save(newPostOffice);
         });
     }
