@@ -47,7 +47,7 @@ public class PostalItemController {
         @PathVariable("id") Long id
     ) {
         return repository.findById(id).map(postalItem -> {
-            postalItem.setType(newPostalItem.setType());
+            postalItem.setType(newPostalItem.getType());
             postalItem.setPostOffice(newPostalItem.getPostOffice());
             return repository.save(postalItem);
         }).orElseGet(() -> {
