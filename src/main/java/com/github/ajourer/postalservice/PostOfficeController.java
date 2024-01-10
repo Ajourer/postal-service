@@ -1,12 +1,14 @@
 package com.github.ajourer.postalservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/post-offices")
@@ -20,12 +22,14 @@ public class PostOfficeController {
         this.repository = repository;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
+    @ResponseBody
     public Iterable<PostOffice> all() {
         return repository.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping("")
+    @ResponseBody
     public PostOffice newPostOffice(
         @RequestBody final PostOffice newPostOffice
     ) {
@@ -33,6 +37,7 @@ public class PostOfficeController {
     }
 
     @GetMapping("/{postcode}")
+    @ResponseBody
     public PostOffice one(@PathVariable("postcode") final int postcode) {
         return repository.findByPostcode(postcode).orElseThrow(() ->
             new java.util.NoSuchElementException("" + postcode)
@@ -40,6 +45,7 @@ public class PostOfficeController {
     }
 
     @PutMapping("/{postcode}")
+    @ResponseBody
     public PostOffice replacePostOffice(
         @RequestBody PostOffice newPostOffice,
         @PathVariable("postcode") int postcode
@@ -55,6 +61,7 @@ public class PostOfficeController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseBody
     public void deletePostOffice(@PathVariable("id") final int id) {
         repository.deleteById(id);
     }

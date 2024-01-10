@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/postal-items")
@@ -21,12 +22,14 @@ public class PostalItemController {
         this.repository = repository;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
+    @ResponseBody
     public Iterable<PostalItem> all() {
         return repository.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping("")
+    @ResponseBody
     public PostalItem newPostalItem(
         @RequestBody final PostalItem newPostalItem
     ) {
@@ -34,6 +37,7 @@ public class PostalItemController {
     }
 
     @GetMapping("/{id}")
+    @ResponseBody
     public PostalItem one(@PathVariable("id") final long id) {
         return repository.findById(id).orElseThrow(() ->
             new java.util.NoSuchElementException("" + id)
@@ -41,6 +45,7 @@ public class PostalItemController {
     }
 
     @PutMapping("/{id}")
+    @ResponseBody
     public PostalItem replacePostalItem(
         @RequestBody PostalItem newPostalItem,
         @PathVariable("id") long id
@@ -56,6 +61,7 @@ public class PostalItemController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseBody
     public void deletePostalItem(@PathVariable("id") final long id) {
         repository.deleteById(id);
     }
