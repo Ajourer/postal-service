@@ -36,7 +36,7 @@ public class PostOfficeController {
     @PutMapping("/{postcode}")
     public PostOffice replacePostOffice(
         @RequestBody PostOffice newPostOffice,
-        @PathVariable("postcode") Integer postcode
+        @PathVariable("postcode") int postcode
     ) {
         return repository.findById(postcode).map(PostOffice -> {
             PostOffice.setName(newPostOffice.getName());

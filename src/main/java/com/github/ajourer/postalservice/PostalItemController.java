@@ -44,7 +44,7 @@ public class PostalItemController {
     @PutMapping("/{id}")
     public PostalItem replacePostalItem(
         @RequestBody PostalItem newPostalItem,
-        @PathVariable("id") Long id
+        @PathVariable("id") long id
     ) {
         return repository.findById(id).map(postalItem -> {
             postalItem.setType(newPostalItem.getType());
