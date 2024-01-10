@@ -41,20 +41,20 @@ public class PostalItemController {
         );
     }
 
-    /* @PutMapping("/{id}")
+    @PutMapping("/{id}")
     public PostalItem replacePostalItem(
         @RequestBody PostalItem newPostalItem,
-        @PathVariable Long id
+        @PathVariable("id") Long id
     ) {
         return repository.findById(id).map(postalItem -> {
-            postalItem.setName(newPostalItem.getName());
-            postalItem.setRole(newPostalItem.getRole());
+            postalItem.setType(newPostalItem.setType());
+            postalItem.setPostOffice(newPostalItem.getPostOffice());
             return repository.save(postalItem);
         }).orElseGet(() -> {
             newPostalItem.setId(id);
             return repository.save(newPostalItem);
         });
-    } */
+    }
 
     @DeleteMapping("/{id}")
     public void deletePostalItem(@PathVariable("id") final long id) {
