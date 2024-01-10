@@ -26,10 +26,10 @@ public class PostOfficeController {
         return repository.save(newPostOffice);
     }
 
-    @GetMapping("/{id}")
-    public PostOffice one(@PathVariable("id") final int id) {
-        return repository.findById(id).orElseThrow(() ->
-            new java.util.NoSuchElementException("" + id)
+    @GetMapping("/{postcode}")
+    public PostOffice one(@PathVariable("postcode") final int postcode) {
+        return repository.findByPostcode(postcode).orElseThrow(() ->
+            new java.util.NoSuchElementException("" + postcode)
         );
     }
 
@@ -38,7 +38,7 @@ public class PostOfficeController {
         @RequestBody PostOffice newPostOffice,
         @PathVariable("postcode") int postcode
     ) {
-        return repository.findById(postcode).map(PostOffice -> {
+        return repository.findByPostcode(postcode).map(PostOffice -> {
             PostOffice.setName(newPostOffice.getName());
             PostOffice.setAddress(newPostOffice.getAddress());
             return repository.save(PostOffice);
