@@ -3,7 +3,7 @@ package com.github.ajourer.postalservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/post-office")
+@RequestMapping("/post-offices")
 @RestController
 public class PostOfficeController {
     private final PostOfficeRepository repository;
